@@ -1,31 +1,38 @@
-pipeline
-{
+pipeline {
     agent any
-    
+
     stages {
-    
-        stage('Clone') {
-            steps {
-                echo 'Cloning Repository'
-            }
-        }
 
         stage('Build') {
             steps {
-                echo 'Building Application'
+                echo "Building the application..."
+                // Example build command
+                sh 'echo Build Stage Completed'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Running Tests'
+                echo "Running tests..."
+                // Example test command
+                sh 'echo Test Stage Completed'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploying Application'
+                echo "Deploying application to server..."
+                // Example deploy command
+                sh 'echo Deployment Successful'
             }
         }
+
+        stage('Monitor') {
+            steps {
+                echo "Monitoring application..."
+                sh 'echo Monitoring Started'
+            }
+        }
+
     }
 }
